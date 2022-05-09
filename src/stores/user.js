@@ -19,7 +19,7 @@ export const useUserStore = defineStore({
           },
         });
         this.user = data.data;
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         this.user = false;
       }
