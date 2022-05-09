@@ -4,6 +4,8 @@ import { useUserStore } from "@/stores/user";
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
+import Navbar from '@/components/layouts/Navbar.vue'
+
 const router = useRouter()
 
 // kebutuhan untuk mengakses store user
@@ -33,9 +35,6 @@ async function getPeriodList() {
     console.error(error)
   }
 }
-
-
-
 
 const token = localStorage.getItem('access_token')
 
@@ -69,6 +68,8 @@ onMounted(() => {
 
 
 <template>
+  <Navbar />
+
   <div class="container">
     <h1>Absence</h1>
     <div class="flex flex-row p-10 mx-auto">
