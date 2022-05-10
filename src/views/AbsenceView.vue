@@ -3,6 +3,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useUserStore } from "@/stores/user";
 import { useRouter } from 'vue-router';
 import axios from 'axios';
+import moment from 'moment';
 
 import Navbar from '@/components/layouts/Navbar.vue'
 
@@ -98,7 +99,7 @@ onMounted(() => {
   <!-- Absence section end -->
 
   <!-- Absence Result section start -->
-  <section id="contact" class="pb-32 pt-36 dark:bg-slate-800">
+  <section id="contact" class="pb-32 pt-12">
     <div class="container">
 
       <div class="w-full mx-auto lg:w-2/3">
@@ -114,9 +115,9 @@ onMounted(() => {
           <div class="table-row-group">
             <div class="table-row" v-if="dataAbsence" v-for="absence in dataAbsence" :key="absence.IDNo">
               <div class="table-cell ">{{ absence.Day }}</div>
-              <div class="table-cell ">{{ absence.Date }}</div>
-              <div class="table-cell ">{{ absence.AIn }}</div>
-              <div class="table-cell ">{{ absence.AOut }}</div>
+              <div class="table-cell ">{{ moment(absence.Date).format('DD/MM/YYYY') }}</div>
+              <div class="table-cell ">{{ moment(absence.AIn).format('HH:mm') }}</div>
+              <div class="table-cell ">{{ moment(absence.AOut).format('HH:mm') }}</div>
             </div>
             <div v-else>
               Data tidak ada
