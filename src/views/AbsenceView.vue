@@ -18,11 +18,6 @@ onMounted(() => {
   userStore.fetchUser()
 })
 
-// kebutuhan post absence
-// const form = ref({
-//   param1: ""
-// })
-
 // lookup period
 const selected = ref('')
 const periodlist = ref([])
