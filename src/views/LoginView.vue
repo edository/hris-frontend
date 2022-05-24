@@ -14,6 +14,9 @@ const form = ref({
   privatetoken: "$2y$10$rjuAbnEnljUXTZ7ZfvFQzOo71DrHdPjBV9kq8yHSzEAcG/YzSRkUS"
 })
 
+const errored = ref(false)
+
+
 async function login() {
   try {
     const response = await axios.post("http://192.168.1.14/hris-api/api/login", {
@@ -28,7 +31,10 @@ async function login() {
     userStore.fetchUser()
     router.push('/')
   } catch (error) {
-    console.error(error)
+    // console.error(error)
+    // const errormessage = error.response.data.message
+    console.log(error.response)
+    errored.value = true
   }
 }
 
@@ -39,7 +45,9 @@ async function login() {
     <div
       class="w-full p-6 m-auto bg-white border-t border-purple-600 rounded shadow-lg shadow-purple-800/50 lg:max-w-md">
       <h1 class="text-3xl font-semibold text-center text-slate-500">HRIS || e-Absence</h1>
-
+      <section v-if="errored">
+        <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+      </section>
       <form class="mt-6">
         <div>
           <label for="email" class="block text-sm text-gray-800">Email</label>
