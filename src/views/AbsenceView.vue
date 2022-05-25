@@ -114,9 +114,6 @@ onMounted(() => {
               <div class="table-cell ">{{ moment(absence.AIn).format('HH:mm') }}</div>
               <div class="table-cell ">{{ moment(absence.AOut).format('HH:mm') }}</div>
             </div>
-            <div v-else>
-              Data tidak ada
-            </div>
           </div>
         </div>
       </div>
