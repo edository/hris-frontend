@@ -23,7 +23,7 @@ function logout() {
 
 <template>
   <nav>
-    <ul class="flex flex-col mt-4 bg-slate-500 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-regular">
+    <ul class="flex flex-col mt-4 bg-slate-500 md:flex-row   md:space-x-8 md:mt-0 md:text-sm md:font-regular">
       <li>
         <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white border-b border-gray-100 hover:text-slate-200"
           aria-current="page">Home
